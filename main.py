@@ -125,30 +125,18 @@ StartingNode = []
 TherminalNode = []
 
 
-def add_fact_to_BB(fact):
-    BlackBoard.append(fact)
-
 
 # Get fact From user
-while input_fact:
-    print('Enter fact:')
-    input_fact_txt = input()  # ขึ้นให้ป้อนข้อมูล เก็บไว้ในตัวแปรชื่อ input_fact_txt
 
-    if input_fact_txt != "":  # ถ้าผู้ใช้ป้อนข้อมูล
+print("Enter fact: ")
+input_fact_txt = input()  # ขึ้นให้ป้อนข้อมูล เก็บไว้ในตัวแปรชื่อ input_fact_txt
 
-        print('Have another fact ? (Y = yes,N = no)')
-        # if keyboard.is_pressed('y'): # เช็คว่ากด Y ไหม ต้องเทสใน Pycharm !!
-        #  input_fact = True
-        # else:
-        #  input_fact = False
-        if input() == "y":
-            input_fact = True
-        else:
-            input_fact = False
-
-        add_fact_to_BB(input_fact_txt)
-    else:  # ถ้าผู้ใช้ไม่ป้อนข้อมูล
-        input_fact = False
+if input_fact_txt != "":  # ถ้าผู้ใช้ป้อนข้อมูล
+    inputdata = input_fact_txt.split()
+    for data in inputdata:
+        BlackBoard.append(data)
+else:  # ถ้าผู้ใช้ไม่ป้อนข้อมูล
+    input_fact = False
 
 # เก็บ TherminalNode ไว้ในตัวแปร ปล.ยังไม่ได้แยกเอา intermidiant Node ออก
 for ther in KB:
@@ -213,11 +201,12 @@ for th in TherminalNode:
         if str(th) == str(bbb):
             Concluding.append(th)
 if Concluding != []:
+
     print("It is "+str(Concluding))
 else:
     print("No Answer")
 
-
+BlackBoard = list(set(BlackBoard)) # ลบตัวซ้ำ
 
 
 
