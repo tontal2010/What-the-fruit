@@ -34,6 +34,8 @@ KB = [["orange", "circle", "Orange"], \
     if red and circle Then apple *
     if yellow and circle Then durian * ดอกจันคือ เอาไปเพิ่มในโค้ดแล้ว
 
+************ Code น่าจะเสร็จแล้ว กำลังคิดอยู่ว่ามันเก็บค่าที่ซ้ำไว้ใน BlackBoard ไหม
+
     สี+ลักษณะ+เป็นพวงหรือลูกเดียว+รสชาติ
 (ทำให้เป็นแพทเทิลนี้) !!!
 Bitter - ขม
@@ -124,8 +126,6 @@ BlackBoard = []
 StartingNode = []
 TherminalNode = []
 
-
-
 # Get fact From user
 
 print("Enter fact: ")
@@ -160,9 +160,7 @@ for a in KB:  # นำข้อมูล array ตัวแรก ของ arra
         inThen = 0  # reset ค่าใหม่ แล้วก็ลูปเช็คไปเรื่อยๆ
         check = check + 1  # เช็คตัวถัดไป
 
-
-StartingNode = list(set(StartingNode)) # ลบตัวซ้ำ
-
+StartingNode = list(set(StartingNode))  # ลบตัวซ้ำ
 
 
 def premiseRemain(numpr):
@@ -172,14 +170,16 @@ def premiseRemain(numpr):
         status = False
     else:
         status = True
-    return  status
+    return status
+
+
 numPremise = 0
 # main LOOP
 for rule in KB:
-    lengthRule = len(rule)-1
+    lengthRule = len(rule) - 1
     numPremise = 0
     for premise in rule[0:lengthRule]:
-        numPremise = numPremise +1
+        numPremise = numPremise + 1
         if premise in BlackBoard:
             premiseinBB = True
             if premiseRemain(numPremise) == False:
@@ -200,17 +200,28 @@ for th in TherminalNode:
     for bbb in BlackBoard:
         if str(th) == str(bbb):
             Concluding.append(th)
+concludTxt = ""
+count = 0
 if Concluding != []:
+    if len(Concluding) > 1:
+        for con in Concluding:
+            if count < len(Concluding) - 1:
+                concludTxt = concludTxt + con + " and "
+                count = count + 1
+            else:
 
-    print("It is "+str(Concluding))
+                concludTxt = concludTxt + con + "."
+    else:
+        for con in Concluding:
+            concludTxt = concludTxt + con + "."
+    print("It's " + str(concludTxt))
 else:
     print("No Answer")
 
-BlackBoard = list(set(BlackBoard)) # ลบตัวซ้ำ
+# BlackBoard = list(set(BlackBoard)) # ลบตัวซ้ำ
 
 
-
-#Rule Teacher
+# Rule Teacher
 
 # Debug
 if debug == True:
