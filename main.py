@@ -21,10 +21,8 @@ ThenPart = []
 Concluding = []
 # รูปแบบตัวแปรที่เก็บ เช่น if orange and circle Then orange
 # จะเก็บในรูป ["orange", "circle", "orange"]
-KB = [["orange", "circle", "Orange"], \
-      ["yellow", "long", "banana"], \
-      ["red", "circle", "apple"], \
-      ["yellow", "strong smell", "durian"]]
+KB = []
+
 # ------------------------------------- ข้างงบนเป็น Code
 '''
 **ช่วยคิดหน่อย ใส่ and กี่ตัวก็ได้นะไม่จำเป็นต้อง 2
@@ -41,90 +39,107 @@ KB = [["orange", "circle", "Orange"], \
 Bitter - ขม
 Sweet - หวาน
 Tart - เปรี้ยว
-Sweet and Sour เปรี้ยวอมหวาน
+Sweet Sour เปรี้ยวอมหวาน
 Sour - เปรี้ยว (ในแง่ลบ)
 Mild - รสไม่จัด 
 Bland / Tasteless - จืด (ในแง่ลบ)
 Bunch -พวง
 Acerbic คือรสชาติที่มีความเปรี้ยวอมฝาด คำนี้น่าจะเหมาะกับผลไม้ไทยหลายชนิดนะคะ อย่างเช่นมะยม หรือมะขามป้อมเป็นต้นค่ะ
 Mature ส่วนมากที่เคยได้ยินกันจะแปลว่าเป็นผู้ใหญ่ใช่ไหมคะ แต่พอมาใช้กับรสชาติ Mature แปลว่า รสชาติที่สุกงอม พร้อมรับประทานแล้ว เหมือนกับ ผลไม้ที่สุกเต็มที่พร้อมรับประทานแล้วนั่นเองค่ะ
-stone fruit ผลไม้ที่มีเปลือกแข็ง เช่นลูกพลัมหรือลูกพีช
+Stone fruit ผลไม้ที่มีเปลือกแข็ง เช่นลูกพลัมหรือลูกพีช
+SphereSphere = ทรงกลม
+'''
+Knowledge = [
+    'if orange and circle Then orange', \
+    'if yellow and long Then banana', \
+    'if red and Circle Then apple', \
+    'if yellow and Circle Then durian', \
+    'if purple and Circle and Bunch and Sweet Then grape', \
+    'if brown and Hairy and Single and Sweet Sour Then kiwi', \
+    'if yellow and Oval and Single and Sour Then lemon', \
+    'if pink to red and Oval and Bunch and Sweet Then lychee', \
+    'if green and Oval and Single and Sweet Then mango', \
+    'if green and Circle and Single and sweet Then melon', \
+    'if pink and Circle and Single and Sweet Sour Then peach', \
+    'if yellow and Oval and Single and Sweet Then Pear', \
+    'if yellow and Oval and Single and Sweet Sour Then pineapple', \
+    'if red and Triangle and Single and Sweet Sour Then strawberry', \
+    'if red and Circle and Single and Sour Then tomato', \
+    'if red and Circle and Bunch and Sour Then cherry', \
+    'if while and Circle and Single and Bland Then coconut', \
+    'if yellow and Long and Single and Sweet Then corn', \
+    'if green and Oval and Single and Bland Then avocado', \
+    'if blue and Cricle and Bunch and Sour Then blueberry', \
+    'if brown and Circle and Single and  Bunch Then Chestnut', \
+    'if yellow and Circle and Single and Sweet Then Chinese pear', \
+    'if pink and Circle and Single and Sweet Then Dragon fruit', \
+    'if red and Oval and Bunch and Sour Then goji berry', \
+    'if green and Circle and Single and Bland Then guava', \
+    'if yellow and Oval and Single and Sweet Then jackfruit', \
+    'if purple and Circle and Sin Then mangosteen', \
+    'if and Then papaya', \
+    'if and Then rambutan', \
+    'if and Then raspberry', \
+    'if and Then Acorn', \
+    'if and Then Alder berry', \
+    'if and Then Cantaloupe', \
+    'if and Then Custard apple', \
+    'if and Then Jujube', \
+    'if and Then Lime', \
+    'if and Then Longan', \
+    'if and Then Longong', \
+    'if and Then Ma Fai', \
+    'if and Then Madan', \
+    'if and Then Manila tamarind', \
+    'if and Then Mariam plum', \
+    'if and Then Mulberry', \
+    'if and Then muskmelon', \
+    'if and Then langsat', \
+    'if and Then pomegranate', \
+    'if and Then pomelo', \
+    'if and Then prune', \
+    'if and Then raisins', \
+    'if and Then rose apple', \
+    'if and Then salak', \
+    'if green and Translucent and  Then Star gooseberry', \
+    'if red and Barbed and Bunch and Sweet Sour Then Waive', \
+    'if red and Sphere and Single and Sweet Then Watermelon', \
+    'if brown and Stone fruit and Bunch and Sweet Sour Then tamarind', \
+    'if purple and Rugged and Bunch and Sweet Sour Then Alder berry', \
+    'if green and Sphere and Single and Bland Then Breadfruit', \
+    'if yellow and Oval and Single and Bland Then potato', \
+    'if purple and Oval and Single and Bland Then taro', \
+    'if yellow and Sphere and Single and Sweet Then Quince', \
+    'if and Then', \
+    'if and Then', \
+    'if and Then', \
+    'if and Then', \
+    'if and Then', \
+    'if and Then', \
+    'if and Then', \
+    'if and Then', \
+    'if and Then']
 
-
-    if purple and circle and Bunch and Sweet Then grape
-    if brown and Hairy and Single and Sweet and Sour Then kiwi
-    if yellow and Oval and Single and Sour Then lemon
-    if and Then lychee
-    if and Then mango
-    if and Then melon
-    if and Then peach
-    if and Then Pear
-    if yellow and Then pineapple
-    if red and Then strawberry
-    if and Then tomato
-    if and Then taro
-    if and Then cherry
-    if and Then coconut
-    if and Then corn
-    if and Then avocado
-    if and Then blackberry
-    if and Then blueberry
-    if and Then Chestnut
-    if and Then Chinese pear
-    if and Then Dragon fruit
-    if and Then goji berry
-    if and Then guava
-    if and Then jackfruit
-    if and Then mangosteen
-    if and Then papaya
-    if and Then rambutan
-    if and Then raspberry
-    if and Then Acorn
-    if and Then Alder berry
-    if and Then Cantaloupe
-    if and Then Custard apple
-    if and Then Jujube
-    if and Then Lime
-    if and Then Longan 
-    if and Then Longong
-    if and Then Ma Fai 
-    if and Then Madan
-    if and Then Manila tamarind
-    if and Then Mariam plum
-    if and Then Mulberry
-    if and Then muskmelon
-    if and Then langsat
-    if and Then pomegranate
-    if and Then pomelo
-    if and Then prune
-    if and Then raisins
-    if and Then rose apple
-    if and Then salak
-    if and Then Star gooseberry
-    if and Then Waive
-    if and Then Watermelon
-    if and Then tamarind
-    if and Then Alder berry
-    if and Then Breadfruit
-    if and Then potato
-    if and Then taro
-    if and Then Quince
-    if and Then
-    if and Then
-    if and Then
-    if and Then
-    if and Then
-    if and Then
-    if and Then
-    if and Then
-    if and Then
-
+'''
 สี+ลักษณะ+รสชาติ+เป็นพวงหรือลูก+
 (ทำให้เป็นแพทเทิลนี้)
 '''
 BlackBoard = []
 StartingNode = []
 TherminalNode = []
+if debug == True:
+    print("old:" + str(KB))
+# แปลง if and then เป็น code
+for kn in Knowledge:
+    kn = kn.lower()
+    if "if" or "and" or "then" in kn:
+        kn = kn.replace("if", "")
+        kn = kn.replace("and", "")
+        kn = kn.replace("then", "")
+    newkn = kn.split()
+    KB.append(newkn)
+if debug == True:
+    print("new:" + str(KB))
 
 # Get fact From user
 
