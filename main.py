@@ -1,4 +1,4 @@
-import keyboard
+# import keyboard
 
 # สร้างตัวแปร
 global KB
@@ -50,75 +50,62 @@ Stone fruit ผลไม้ที่มีเปลือกแข็ง เช�
 SphereSphere = ทรงกลม
 '''
 Knowledge = [
-    'if orange and circle Then orange', \
-    'if yellow and long Then banana', \
-    'if red and Circle Then apple', \
-    'if yellow and Circle Then durian', \
-    'if purple and Circle and Bunch and Sweet Then grape', \
-    'if brown and Hairy and Single and Sweet Sour Then kiwi', \
+    'if orange and Sphere and Single and Sour Then OrangeFruit', \
+    'if yellow and long and Bland and Sweet Then banana', \
+    'if red and Sphere and Single and Sweet Then apple', \
+    'if yellow and Barbed and Single and Sweet Then durian', \
+    'if purple and Sphere and Bunch and Sweet Then grape', \
+    'if brown and Hairy and Single and SweetSour Then kiwi', \
     'if yellow and Oval and Single and Sour Then lemon', \
-    'if pink to red and Oval and Bunch and Sweet Then lychee', \
+    'if PinkToRed and Oval and Bunch and Sweet Then lychee', \
     'if green and Oval and Single and Sweet Then mango', \
-    'if green and Circle and Single and sweet Then melon', \
-    'if pink and Circle and Single and Sweet Sour Then peach', \
+    'if green and PatternedSphere and Single and sweet Then melon', \
+    'if pink and Sphere and Single and Sweet Sour Then peach', \
     'if yellow and Oval and Single and Sweet Then Pear', \
-    'if yellow and Oval and Single and Sweet Sour Then pineapple', \
-    'if red and Triangle and Single and Sweet Sour Then strawberry', \
-    'if red and Circle and Single and Sour Then tomato', \
-    'if red and Circle and Bunch and Sour Then cherry', \
-    'if while and Circle and Single and Bland Then coconut', \
+    'if yellow and Oval and Single and SweetSour Then pineapple', \
+    'if red and Triangle and Single and SweetSour Then strawberry', \
+    'if red and Sphere and Single and Sour Then tomato', \
+    'if red and Sphere and Bunch and Sour Then cherry', \
+    'if while and Sphere and Single and Bland Then coconut', \
     'if yellow and Long and Single and Sweet Then corn', \
     'if green and Oval and Single and Bland Then avocado', \
-    'if blue and Cricle and Bunch and Sour Then blueberry', \
-    'if brown and Circle and Single and  Bunch Then Chestnut', \
-    'if yellow and Circle and Single and Sweet Then Chinese pear', \
-    'if pink and Circle and Single and Sweet Then Dragon fruit', \
-    'if red and Oval and Bunch and Sour Then goji berry', \
-    'if green and Circle and Single and Bland Then guava', \
+    'if blue and Sphere and Bunch and Sour Then blueberry', \
+    'if brown and Sphere and Single and  Bunch Then Chestnut', \
+    'if yellow and Sphere and Single and Sweet Then ChinesePear', \
+    'if pink and Sphere and Single and Sweet Then DragonFruit', \
+    'if red and Oval and Bunch and Sour Then GojiBerry', \
+    'if green and Sphere and Single and Bland Then guava', \
     'if yellow and Oval and Single and Sweet Then jackfruit', \
-    'if purple and Circle and Sin Then mangosteen', \
-    'if and Then papaya', \
-    'if and Then rambutan', \
-    'if and Then raspberry', \
-    'if and Then Acorn', \
-    'if and Then Alder berry', \
-    'if and Then Cantaloupe', \
-    'if and Then Custard apple', \
-    'if and Then Jujube', \
-    'if and Then Lime', \
-    'if and Then Longan', \
-    'if and Then Longong', \
-    'if and Then Ma Fai', \
-    'if and Then Madan', \
-    'if and Then Manila tamarind', \
-    'if and Then Mariam plum', \
-    'if and Then Mulberry', \
-    'if and Then muskmelon', \
-    'if and Then langsat', \
-    'if and Then pomegranate', \
-    'if and Then pomelo', \
-    'if and Then prune', \
-    'if and Then raisins', \
-    'if and Then rose apple', \
-    'if and Then salak', \
-    'if green and Translucent and  Then Star gooseberry', \
-    'if red and Barbed and Bunch and Sweet Sour Then Waive', \
+    'if purple and Sphere and Single and SweetSour Then mangosteen', \
+    'if orange and long and Single and Sweet Then papaya', \
+    'if red and Hairy and Bunch and Sweet Then rambutan', \
+    'if red and Small and Bunch and Sour Then raspberry', \
+    'if brown and HardShell and Single and Bunch Then Acorn', \
+    'if orange and Sphere and Single and Sweet Then Cantaloupe', \
+    'if Green and Rough and Single and Sweet Then CustardApple', \
+    'if red and Oval and Bunch and Sweet Then Jujube', \
+    'if yellow and Sphere and Single and Sour Then Lime', \
+    'if brown and circle and Bunch and Sweet Then Longan', \
+    'if brown and circle and Bunch and SweetSour Then Longong', \
+    'if Sour and circle and Bunch and Sour Then MaFai', \
+    'if Green and Oval and Single and Sour Then Madan', \
+    'if purple and Sphere and Single and Sweet Then MariamPlum', \
+    'if purple and Rugged and Bunch and SweetSour Then Mulberry', \
+    'if yellow and Oval and Single and Sweet Then muskmelon', \
+    'if yellow and Sphere and Bunch and Sweet Then langsat', \
+    'if red and Sphere and Single and SweetSour Then pomegranate', \
+    'if green and Sphere and Single and SweetSour Then pomelo', \
+    'if purple and Sphere and Bunch and Sour Then prune', \
+    'if black and Granular and Bunch and SweetSour Then raisins', \
+    'if red and BellShape and Bunch and Sweet Then rose apple', \
+    'if redbrown and Barbed and Bunch and SweetSour Then salak', \
+    'if green and Translucent and Single and SweetSour Then StarGooseberry', \
     'if red and Sphere and Single and Sweet Then Watermelon', \
-    'if brown and Stone fruit and Bunch and Sweet Sour Then tamarind', \
-    'if purple and Rugged and Bunch and Sweet Sour Then Alder berry', \
+    'if brown and StoneFruit and Bunch and SweetSour Then tamarind', \
     'if green and Sphere and Single and Bland Then Breadfruit', \
     'if yellow and Oval and Single and Bland Then potato', \
     'if purple and Oval and Single and Bland Then taro', \
-    'if yellow and Sphere and Single and Sweet Then Quince', \
-    'if and Then', \
-    'if and Then', \
-    'if and Then', \
-    'if and Then', \
-    'if and Then', \
-    'if and Then', \
-    'if and Then', \
-    'if and Then', \
-    'if and Then']
+    'if yellow and Sphere and Single and Sweet Then Quince']
 
 '''
 สี+ลักษณะ+รสชาติ+เป็นพวงหรือลูก+
@@ -127,23 +114,20 @@ Knowledge = [
 BlackBoard = []
 StartingNode = []
 TherminalNode = []
-if debug == True:
-    print("old:" + str(KB))
+
 # แปลง if and then เป็น code
 for kn in Knowledge:
-    kn = kn.lower()
-    if "if" or "and" or "then" in kn:
+    # kn = kn.lower()
+    if "if" or "and" or "Then" in kn:
         kn = kn.replace("if", "")
         kn = kn.replace("and", "")
-        kn = kn.replace("then", "")
+        kn = kn.replace("Then", "")
     newkn = kn.split()
     KB.append(newkn)
-if debug == True:
-    print("new:" + str(KB))
 
 # Get fact From user
 
-print("Enter fact: ")
+print("Enter fact (ex. yellow long): ")
 input_fact_txt = input()  # ขึ้นให้ป้อนข้อมูล เก็บไว้ในตัวแปรชื่อ input_fact_txt
 
 if input_fact_txt != "":  # ถ้าผู้ใช้ป้อนข้อมูล
@@ -155,10 +139,11 @@ else:  # ถ้าผู้ใช้ไม่ป้อนข้อมูล
 
 # เก็บ TherminalNode ไว้ในตัวแปร ปล.ยังไม่ได้แยกเอา intermidiant Node ออก
 for ther in KB:
-    TherminalNode.append(ther[len(ther) - 1])
+    TherminalNode.append(str(ther[len(ther) - 1]))
     ThenPart.append(ther[len(ther) - 1])
 # เก็บ Starting Node ไว้ในตัวแปร
 # Starting node คือ ตัวที่ไม่อยู่ใน then
+
 for a in KB:  # นำข้อมูล array ตัวแรก ของ array ใน KB มาเก็บไว้ใน a
     # ข้อมูลที่ได้คือ a มีค่า ['orange','circle','orange']
     len_a = len(a)
@@ -168,7 +153,7 @@ for a in KB:  # นำข้อมูล array ตัวแรก ของ arra
             # ข้อมูลที่ได้คือ b มีค่า ['orange','circle','orange']
             if (str(a[check]) == str(b[len(b) - 1])):  # ถ้า a ตัวที่ check ตรงกับ b ใน then part
                 inThen = inThen + 1  # เพิ่มค่าตัวแปร inThen ให้เพิ่มขึ้น 1
-                TherminalNode.remove(str(a[check]))  # ลบตัวที่เป็น intermidiant node ออกจาก therminalnode
+                TherminalNode.remove(a[check])  # ลบตัวที่เป็น intermidiant node ออกจาก therminalnode
 
         if inThen == 0:  # ถ้าไม่ตรงกับใน then เลย
             StartingNode.append(a[check])  # เพิ่ม a ตัวที่ check ใน starting node
@@ -189,34 +174,42 @@ def premiseRemain(numpr):
 
 
 numPremise = 0
+notin = []
 # main LOOP
 for rule in KB:
     lengthRule = len(rule) - 1
     numPremise = 0
     for premise in rule[0:lengthRule]:
-        numPremise = numPremise + 1
-        if premise in BlackBoard:
-            premiseinBB = True
-            if premiseRemain(numPremise) == False:
-                for p1 in rule:
-                    BlackBoard.append(p1)
+        if premise not in notin:
+            numPremise = numPremise + 1
+            if premise in BlackBoard:
+                premiseinBB = True
+                if premiseRemain(numPremise) == False:
+                    for p1 in rule:
+                        BlackBoard.append(p1)
+            else:
+                if premise in StartingNode:
+                    print(str(premise) + " ? (y = yes, n = No)")
+                    response = input()
+                    if str(response) == "y":
+                        if premiseRemain(numPremise) == False:
+                            for p2 in rule:
+                                BlackBoard.append(p2)
+                    else:
+                        notin.append(premise)
+                        break
         else:
-            if premise in StartingNode:
-                print(str(premise) + " ? (y = yes, n = No)")
-                response = input()
-                if str(response) == "y":
-                    if premiseRemain(numPremise) == False:
-                        for p2 in rule:
-                            BlackBoard.append(p2)
-                else:
-                    break
+            break
 
 for th in TherminalNode:
     for bbb in BlackBoard:
         if str(th) == str(bbb):
             Concluding.append(th)
 concludTxt = ""
+Concluding = list(set(Concluding))  # ลบตัวซ้ำ
 count = 0
+print(" ")
+print(" ")
 if Concluding != []:
     if len(Concluding) > 1:
         for con in Concluding:
@@ -234,15 +227,17 @@ else:
     print("No Answer")
 
 # BlackBoard = list(set(BlackBoard)) # ลบตัวซ้ำ
+print(" ")
 
-
+print(" ")
 # Rule Teacher
 
 # Debug
 if debug == True:
+    print("--------------- > DEBUG Enable <-------------- ")
     print("BlackBoard = " + str(BlackBoard))
     print("StartingNode = " + str(StartingNode))
-    print("TherminalNode = " + str(TherminalNode))
+    print("TerminalNode = " + str(TherminalNode))
     print("ThenPart = " + str(ThenPart))
 
 
