@@ -138,7 +138,7 @@ def respons(respons):
             try:
                 rulelist()
                 print("")
-                print("[พิมพ์ 0 เพื่อกลับไปหน้าแรก] \n[พิมพ์ 1 เพื่อเพิ่มกฏใหม่] \n[พิมพ์ 2 เพื่อลบกฏ]")
+                print("[พิมพ์ 0 เพื่อกลับไปหน้าแรก] \n[พิมพ์ 1 เพื่อเพิ่มกฏใหม่] \n[พิมพ์ 2 เพื่อลบกฏ] \n[พิมพ์ 3 เพื่อลบกฏทั้งหมด]")
                 submanu_1 = int(input(">> "))
             except ValueError:
 
@@ -205,6 +205,15 @@ def respons(respons):
                                 return 0
 
                             break
+                if submanu_1 == 3:
+                    print("ท่านแน่ใจว่าจะลบกฏทั้งหมดหรือไม่ (Y = Yes, N = No)")
+                    qus = input(">> ")
+                    if qus.upper() == "Y":
+                        Knowledge.clear()
+                        return 0
+                    else:
+                        return 0
+
                 break
 
     if respons == 0:
@@ -295,7 +304,7 @@ for rule in KB:
             if premise in StartingNode:
                 print(str(premise) + " ? (y = yes, n = No)")
                 response = input()
-                if str(response) == "y":
+                if str(response.upper()) == "Y":
                     if premiseRemain(numPremise) == False:
                         for p2 in rule:
                             if p2 not in BlackBoard:
@@ -347,6 +356,10 @@ if debug == True:
     print("StartingNode = " + str(StartingNode))
     print("TerminalNode = " + str(TherminalNode))
     print("ThenPart = " + str(ThenPart))
+print("คุณต้องการที่จะเริ่มใหม่หรือไม่ (ไม่ได้รีเซ็ตกฏใหม่)(Y = Yes, N = No)")
+resta = input(">> ")
+if resta.upper() == "Y":
+    startmenu(True)
 
 
 
