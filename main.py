@@ -131,7 +131,7 @@ def startmenu(first):
             continue
         else:
             retun = respons(respon)
-            if retun == 1:
+            if retun == 0:
                 respons(1)
             break
 
