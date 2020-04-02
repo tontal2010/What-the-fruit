@@ -252,7 +252,7 @@ for a in KB:  # นำข้อมูล array ตัวแรก ของ arra
 
             if (str(a[check]) == str(b[len(b) - 1])):  # ถ้า a ตัวที่ check ตรงกับ b ใน then part
                 inThen = inThen + 1  # เพิ่มค่าตัวแปร inThen ให้เพิ่มขึ้น 1
-                if ((str(a[check])) in TherminalNode):
+                if (str(a[check]) in TherminalNode):
                     TherminalNode.remove(a[check])  # ลบตัวที่เป็น intermidiant node ออกจาก therminalnode
 
         if inThen == 0:  # ถ้าไม่ตรงกับใน then เลย
