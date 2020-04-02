@@ -356,10 +356,7 @@ if debug == True:
     print("StartingNode = " + str(StartingNode))
     print("TerminalNode = " + str(TherminalNode))
     print("ThenPart = " + str(ThenPart))
-print("คุณต้องการที่จะเริ่มใหม่หรือไม่ (ไม่ได้รีเซ็ตกฏใหม่)(Y = Yes, N = No)")
-resta = input(">> ")
-if resta.upper() == "Y":
-    startmenu(True)
+
 
 
 
