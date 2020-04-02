@@ -32,40 +32,119 @@ input_fact = True
 inThen = 0
 ThenPart = []
 Concluding = []
-# รูปแบบตัวแปรที่เก็บ เช่น if orange and circle Then orange
-# จะเก็บในรูป ["orange", "circle", "orange"]
+
 KB = []
 
-# ------------------------------------- ข้างงบนเป็น Code
-'''
 
-'''
+
 Knowledge = [
-  'if ส่งเสียงร้องในลำคอ and กินแมลง Then กบ',\
-  'if กบ Then มีสีเขียว',\
-  'if ส่งเสียงร้องสูง and กินแมลง Then นกขมิ้น',\
-  'if นกขมิ้น Then มีสีเหลือง',\
-  'if มีงวง and มีงา Then ช้าง'\
-  'if ช้าง Then กินพืช'\
-  'if มีพิษ and สัตว์เลื้อยคลาน Then งู',\
-  'if งู Then กินเนื้อ'\
-  'if มีสีขาวดำ and ตัวเป็นลายทาง Then ม้าลาย',\
-  'if ม้าลาย Then สัตว์บก',\
-  'if มีหางยาวเหมือนสัตว์เลื้อยคลาน and ตัวผู้อุ้มท้อง Then ม้าน้ำ',\
-  'if ม้าน้ำ Then สัตว์น้ำ',\
-  'if ส่งเสียงเห่า and สัตว์เลี้ยง Then สุนัข',\
-  'if สุนัข Then สัตว์ออกลูกเป็นตัว',\
-  'if ส่งเสียงขัน and มีขน Then ไก่',\
-  'if ไก่ Then สัตว์ออกลูกเป็นไข่'
- ]
+    'if มีสี่ขา and อยู่บนบกและในน้ำ Then สัตว์ครึ่งบกครึ่งน้ำ',
+    'if สัตว์ครึ่งบกครึ่งน้ำ and กินแมลง and สีเขียว Then กบ',
+    'if มีงวง and มีงา Then อาศัยอยู่ในป่า',
+    'if อาศัยอยู่ในป่า and มีขนาดใหญ่ Then ช้าง',
+    'if มีสองขา and มีปีก Then สัตว์ปีก',
+    'if สัตว์ปีก and มีหงอน and ส่งเสียงขัน Then ไก่',
+    'if มีสี่ขา and อยู่บนบก Then สัตว์บก',
+    'if สัตว์บก and ส่งเสียงเห่า and สัตว์เลี้ยง Then สุนัข ',
+    'if มีพิษ and หางยาว Then สัตว์เลื้อยคลาน',
+    'if สัตว์เลื้อยคลาน and กินเนื้อ Then งู',
+    'if มีสีขาวดำ and ตัวเป็นลายทาง Then สัตว์เลือดอุ่น',
+    'if สัตว์เลือดอุ่น and กินพืช and สัตว์บก Then ม้าลาย'
+]
 
-'''
-
-'''
 BlackBoard = []
 StartingNode = []
 TherminalNode = []
 
+def numrule():
+    global kb_count
+    kb_count = 1
+    print("=========[ กฏทั้งหมด ]=========")
+    for i in Knowledge:
+        print(str(kb_count) + ") " + i)
+        kb_count = kb_count + 1
+    print("กฏที่มีทั้งหมด " + str(kb_count - 1))
+    kb_count = 0
+def startmenu():
+    global respon, submanu_1, num_premise
+
+    print("")
+    print("=================================================")
+    print("ระบบ Expert System By CPE SWU ID: 165 491 492 508")
+    print("=================================================")
+    print("")
+
+    # ระบบเพิ่ม กฏโดยผู้ใช้
+    while True:
+        try:
+            print("คุณต้องการที่จะใช้ กฏที่มีอยู่แล้ว หรือ ต้องการเพิ่มกฏเอง")
+            print("[พิมพ์ 0 เพื่อดูกฏ ] [พิมพ์ 1 เพื่อใช้กฏที่มีอยู่แล้ว] [พิมพ์ 2 เพื่อเพิ่มกฏเอง]")
+            respon = int(input(">> "))
+            print("")
+        except ValueError:
+
+            continue
+        else:
+
+            break
+
+    kb_count = 1
+    if str(respon) == "0":
+        while True:
+            try:
+                numrule()
+                print("")
+                print("[พิมพ์ 0 เพื่อกลับไปหน้าแรก] [พิมพ์ 1 เพื่อเพิ่มกฏใหม่] [พิมพ์ 2 เพื่อลบกฏ]")
+                submanu_1 = int(input(">> "))
+            except ValueError:
+
+                continue
+            else:
+
+                break
+    if str(respon) == "2" or str(submanu_1) == "1":
+        while True:
+            try:
+                print("")
+                print("กรุณาใส่จำนวนกฏที่ต้องการจะเพิ่ม")
+                num_rule = int(input(">> "))
+            except ValueError:
+                print("คุณใส่จำนวนผิด กรุณาใส่จำนวนเป็นตัวเลข")
+                continue
+            else:
+                for i in range(num_rule):
+                    temp_rule = []
+                    print("กรุณาใส่จำนวน premise ของกฏข้อที่ "+str(i+1))
+                    while True:
+                        try:
+                            num_premise = int(input(">> "))
+                        except ValueError:
+                            print("คุณใส่จำนวนผิด กรุณาใส่จำนวนเป็นตัวเลข")
+                            continue
+                        else:
+                            break
+                    for o in range(num_premise):
+
+                        print("กฏข้อที่ "+str(i+1)+" premise ที่ " +str(o+1))
+                        if str(o) == "0":
+                            pre = input("if ")
+                            pre = "if "+pre
+                            temp_rule.append(str(pre))
+                        elif str(o) == num_premise:
+                            pre = input(temp_rule[0] + " Then ")
+                            pre = "Then "+pre
+                            temp_rule.append(str(pre))
+                        else:
+                            pre = input(temp_rule[0]+" and ")
+                            pre = "and "+pre
+                            temp_rule.append(str(pre))
+                    Knowledge.append(temp_rule)
+
+
+                break
+
+
+startmenu()
 # แปลง if and then เป็น code
 for kn in Knowledge:
     # kn = kn.lower()
@@ -77,11 +156,16 @@ for kn in Knowledge:
     KB.append(newkn)
 
 # Get fact From user
-print("")
-print("=================================================")
-print("ระบบ Expert System By CPE SWU ID: 165 491 492 508")
-print("=================================================")
-print("")
+
+
+
+
+
+
+
+
+
+
 #print("กรุณาใส่รายละเอียดที่คุณเจอ (Problem Fact): ")
 #input_fact_txt = input()  # ขึ้นให้ป้อนข้อมูล เก็บไว้ในตัวแปรชื่อ input_fact_txt
 print("กรุณาใส่รายละเอียดที่คุณเจอ (Problem Fact) ")
@@ -110,10 +194,11 @@ for a in KB:  # นำข้อมูล array ตัวแรก ของ arra
     check = 0
     while check < len_a - 1:
         for b in KB:  # นำข้อมูล array ตัวแรก ของ array ใน KB มาเก็บไว้ใน b
-            # ข้อมูลที่ได้คือ b มีค่า ['orange','circle','orange']
+
             if (str(a[check]) == str(b[len(b) - 1])):  # ถ้า a ตัวที่ check ตรงกับ b ใน then part
                 inThen = inThen + 1  # เพิ่มค่าตัวแปร inThen ให้เพิ่มขึ้น 1
-                TherminalNode.remove(a[check])  # ลบตัวที่เป็น intermidiant node ออกจาก therminalnode
+                if ((str(a[check]) == str(b[len(b) - 1])) in TherminalNode):
+                    TherminalNode.remove(a[check])  # ลบตัวที่เป็น intermidiant node ออกจาก therminalnode
 
         if inThen == 0:  # ถ้าไม่ตรงกับใน then เลย
             StartingNode.append(a[check])  # เพิ่ม a ตัวที่ check ใน starting node
